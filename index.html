@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Wonders of the World</title>
+    <style>
+        :root {
+            --primary-color: #00B07B;
+            --text-color: #FFFFFF;
+            --border-color: rgba(0, 176, 123, 0.48);
+            --padding-lg: 16px;
+            --padding-sm: 8px;
+            --gap-lg: 16px;
+            --gap-sm: 8px;
+            --gap-xs: 4px;
+            --border-radius: 8px;
+            --border-width: 1px;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: var(--text-color);
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: var(--padding-lg);
+            text-align: center;
+            border-bottom: var(--border-width) solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+            color: var(--primary-color);
+            position: relative;
+            z-index: 1;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 176, 123, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+            z-index: 0;
+        }
+        
+        .wonders-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--gap-lg);
+            padding: var(--padding-lg);
+        }
+        
+        @media (min-width: 768px) {
+            .wonders-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .wonders-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .wonder-card {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: var(--border-width) solid var(--border-color);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .wonder-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 176, 123, 0.2);
+        }
+        
+        .wonder-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .wonder-info {
+            padding: var(--padding-lg);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .wonder-name {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: var(--gap-sm);
+            color: var(--primary-color);
+        }
+        
+        .wonder-description {
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: var(--padding-lg);
+            text-align: center;
+            border-top: var(--border-width) solid var(--border-color);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap-lg);
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        
+        .contact-info, .social-links, .copyright {
+            margin: 0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--gap-lg);
+        }
+        
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Discover the Seven Wonders</h1>
+        </header>
+        
+        <main class="wonders-grid">
+            <div class="wonder-card">
+                <img src="https://fal.media/files/monkey/V9egCnD3mJVmGnP8ALAMD_addc2c5d108e442ba404f852acfd5318.jpg" alt="Great Wall of China" class="wonder-image">
+                <div class="wonder-info">
+                    <h2 class="wonder-name">Great Wall of China</h2>
+                    <p class="wonder-description">Built over 2,000 years ago, the Great Wall of China stretches more than 13,000 miles across the northern border of ancient China. It was constructed to protect Chinese states against raids and invasions.</p>
+                </div>
+            </div>
+            
+            <div class="wonder-card">
+                <img src="https://fal.media/files/elephant/cNelwLNm9rKV4hxVlvK9e_4c2f5d7676164344b27891d9384d87e8.jpg" alt="Taj Mahal" class="wonder-image">
+                <div class="wonder-info">
+                    <h2 class="wonder-name">Taj Mahal</h2>
+                    <p class="wonder-description">A magnificent white marble mausoleum in Agra, India, built by Emperor Shah Jahan in memory of his beloved wife. The Taj Mahal is considered the finest example of Mughal architecture.</p>
+                </div>
+            </div>
+            
+            <div class="wonder-card">
+                <img src="https://fal.media/files/panda/6a3hE_TQ6_Kk5xUobbbES_aa1057b64f874aecb53bc1101284c072.jpg" alt="Colosseum" class="wonder-image">
+                <div class="wonder-info">
+                    <h2 class="wonder-name">Colosseum</h2>
+                    <p class="wonder-description">An oval amphitheater in the center of Rome, Italy, built of concrete and sand. It is the largest amphitheater ever built and was used for gladiatorial contests and public spectacles.</p>
+                </div>
+            </div>
+            
+            <div class="wonder-card">
+                <img src="https://fal.media/files/elephant/4fKnOqPoxPD9t4wXAOQUG_ce9be99bb27b418e820965eba4c4eaf3.jpg" alt="Christ the Redeemer" class="wonder-image">
+                <div class="wonder-info">
+                    <h2 class="wonder-name">Christ the Redeemer</h2>
+                    <p class="wonder-description">A massive statue of Jesus Christ atop Mount Corcovado in Rio de Janeiro, Brazil. Standing 98 feet tall, it has become an iconic symbol of both Rio de Janeiro and Brazil.</p>
+                </div>
+            </div>
+            
+            <div class="wonder-card">
+                <img src="https://fal.media/files/tiger/cFjX9n1NuAxxRW2TwakRd_54a40085c57548a9a9e3e55e37710b16.jpg" alt="Chichen Itza" class="wonder-image">
+                <div class="wonder-info">
+                    <h2 class="wonder-name">Chichen Itza</h2>
+                    <p class="wonder-description">A complex of Mayan ruins on Mexico's Yucatán Peninsula. A massive step pyramid, known as El Castillo, dominates the ancient city, which thrived from around 600 A.D. to the 1200s.</p>
+                </div>
+            </div>
+            
+            <div class="wonder-card">
+                <img src="https://fal.media/files/panda/XJw2I05RbOH-eMNArBSlZ_fb1eba3a131a43f69833f1ec2d6583bf.jpg" alt="Petra" class="wonder-image">
+                <div class="wonder-info">
+                    <h2 class="wonder-name">Petra</h2>
+                    <p class="wonder-description">An ancient city carved from rose-colored rock in southern Jordan. Established possibly as early as 312 BC, it was the capital of the Nabataean Kingdom and features elaborate tombs and temples.</p>
+                </div>
+            </div>
+            
+            <div class="wonder-card">
+                <img src="https://fal.media/files/zebra/KLI3zQ1tyyhp2piQtbIAm_9b75867b5de14f6484f767687c11461d.jpg" alt="Machu Picchu" class="wonder-image">
+                <div class="wonder-info">
+                    <h2 class="wonder-name">Machu Picchu</h2>
+                    <p class="wonder-description">An Incan citadel set high in the Andes Mountains in Peru. Built in the 15th century and later abandoned, it's renowned for its sophisticated dry-stone walls and panoramic views.</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="contact-info">
+                    <p>Email: info@sevenwonders.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10V10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.19 14.41 4.53 14.44 3.87 14.31C4.43 16 6.02 17.26 7.89 17.29C6.37 18.45 4.46 19.13 2.38 19.13C2.04 19.13 1.7 19.11 1.36 19.07C3.27 20.29 5.47 21 7.83 21C16 21 20.47 14.46 20.47 8.79C20.47 8.6 20.47 8.42 20.46 8.23C21.3 7.63 22.02 6.89 22.56 6.03L22.46 6Z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2023 Seven Wonders Explorer. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
